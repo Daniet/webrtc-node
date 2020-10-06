@@ -1,0 +1,6 @@
+FROM node:13
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY . .
+RUN npm i -g peer
+CMD ["peerjs", "--port", "3001"]

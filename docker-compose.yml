@@ -1,0 +1,19 @@
+version: '3'
+services:
+  server:
+    image: express
+    build:
+      context: .
+      dockerfile: DockerfileServer
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app
+  peerjs:
+    image: peerjs
+    build:
+      context: .
+      dockerfile: DockerfilePeer
+    ports:
+      - "3001:3001"
